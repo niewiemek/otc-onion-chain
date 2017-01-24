@@ -1,0 +1,32 @@
+/* Item */
+.item {
+  border: 1px solid $brand-primary;
+  border-radius: $border-radius-large;
+  padding-left:  ($grid-gutter-width / 2);
+  padding-right: ($grid-gutter-width / 2);
+  margin-bottom: 20px;
+  
+  @media screen and (min-width: $screen-md-min) {
+    height: 340px;
+  }
+
+  h1 {
+    color: $brand-primary;
+    font-size: ceil(($font-size-base * 1.4));
+    text-align: center;
+  }
+  h2 {
+    color: $gray-light;
+    font-size: ceil(($font-size-base * 1.1));
+    text-align: center;
+    margin-top: 0px;
+  }
+
+  hr {
+    margin: 25px 0;
+    height: 1px;
+    border: 0;
+    background: $brand-primary;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(50%, $brand-primary));
+  }
+}

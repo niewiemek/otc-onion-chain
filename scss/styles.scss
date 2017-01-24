@@ -1,0 +1,28 @@
+@import 'bootstrap';
+@import '../node_modules/font-awesome/css/font-awesome.css';
+@import 'item';
+
+$myColor: #003366;
+
+/* Master Styles */
+body {
+  padding-top: 80px;
+  position: relative;
+}
+
+.block {
+  display: block !important;
+}
+
+.standard {
+  font-size: $font-size-base !important;
+}
+
+#carousel-process {
+  height: 300px;
+}
+
+#map {
+  height: 285px; 
+  width: 100%;
+}

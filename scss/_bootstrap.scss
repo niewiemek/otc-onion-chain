@@ -1,0 +1,15 @@
+@import "bootstrap-variables";
+$icon-font-path: "../node_modules/bootstrap-sass/assets/fonts/bootstrap/";
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+/* override bootstrap styles */
+
+// carausel
+.carousel-control.left, .carousel-control.right {
+    background-image: none
+}
+
+.carousel-content {
+    align-items:center;
+}
