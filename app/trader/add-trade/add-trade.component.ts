@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { ModalComponent } from 'ng2-bs3-modal';
-import { ForwardOrder } from '../../model/trade'
+import { AddTrade } from '../../model/add-trade.model'
 
 import { TraderService } from '../trader.service';
 
@@ -13,14 +12,13 @@ export class AddTradeComponent {
 
   constructor(private traderService: TraderService) {}
 
-    @ViewChild('myModal')
-    modal: ModalComponent;
+  newTrade = new AddTrade();
+  
+  public addTrade() {
+    this.traderService.saveTrade(this.newTrade);
+  }
 
-    close() {
-        this.modal.close();
-    }
-
-    open() {
-        this.modal.open();
-    }
+  public cancelTrade() {
+    this.newTrade = new AddTrade();
+  }
 }

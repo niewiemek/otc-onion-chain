@@ -1,11 +1,33 @@
-<button type="button" class="btn btn-default" (click)="modal.open()">Open me!</button>
 
-<modal #modal>
-    <modal-header [show-close]="true">
-        <h4 class="modal-title">Add a new Trade</h4>
-    </modal-header>
-    <modal-body>
-        Hello World!
-    </modal-body>
-    <modal-footer [show-default-buttons]="true"></modal-footer>
-</modal>
+<div class="modal fade add-trade-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Add trade</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="pair">Pair</label>
+          <input [(ngModel)]="newTrade.pair" type="text" class="form-control" id="pair" placeholder="Currency pair">
+        </div>
+        <div class="form-group">
+          <label for="pair">Nominal</label>
+          <input [(ngModel)]="newTrade.nominal" type="text" class="form-control" id="nominal" placeholder="Nominal">
+        </div>
+        <div class="form-group">
+          <label for="pair">Tenor</label>
+          <input [(ngModel)]="newTrade.tenor" type="text" class="form-control" id="tenor" placeholder="Tenor">
+        </div>
+        <div class="form-group">
+          <label for="party">Party</label>
+          <input [(ngModel)]="newTrade.party" type="text" class="form-control" id="party" placeholder="Party">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button (click)="cancelTrade()" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button (click)="addTrade()" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

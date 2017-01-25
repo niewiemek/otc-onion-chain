@@ -1,12 +1,11 @@
 import { NgModule }             from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, ActivatedRoute } from '@angular/router';
 
 import { TraderComponent }   from './trader/trader.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/tradingA', pathMatch: 'full' },
-  { path: 'tradingA',  component: TraderComponent },
-  { path: 'tradingB',  component: TraderComponent }
+  { path: '', redirectTo: '/trader/NodeA', pathMatch: 'full' },
+  { path: 'trader/:node',  component: TraderComponent }
 ];
 
 @NgModule({
