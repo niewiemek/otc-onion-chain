@@ -12,6 +12,16 @@ export class HttpService {
 
     constructor(private http: Http, private hostManager: HostManager) {}
 
+    public post(endpoint: string) {
+        let url = this.hostManager.getHostName() + endpoint;
+
+        return this.http.post(url, undefined).toPromise()
+            .then((res) => {
+                console.log(res);
+            })
+            .catch(this.handleError);
+    }
+
     public put(object, endpoint: string) {
         let url = this.hostManager.getHostName() + endpoint;
         return this.http
@@ -20,6 +30,14 @@ export class HttpService {
             .then((res) => {
                 console.log(res);
             })
+            .catch(this.handleError);
+    }
+
+    public get(endpoint: string, callback) {
+        let url = this.hostManager.getHostName() + endpoint;
+        return this.http.get(url)
+            .toPromise()
+            .then(callback)
             .catch(this.handleError);
     }
 
